@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>编程英文词汇词义对照表 | dxiangwiki</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, PingFang SC, Microsoft YaHei, sans-serif;
+        }
+        body {
+            background-color: #f7f8fa;
+            padding: 24px 16px;
+            color: #1f2329;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+        .desc {
+            color: #646a73;
+            font-size: 15px;
+            margin-bottom:20px;
+        }
+        /* 搜索框样式 */
+        .search-wrap{
+            max-width:420px;
+            margin:0 auto 30px;
+        }
+        #searchInput{
+            width:100%;
+            padding:12px 16px;
+            border:1px solid #dcdfe6;
+            border-radius:10px;
+            font-size:16px;
+            outline:none;
+        }
+        #searchInput:focus{
+            border-color:#1677ff;
+            box-shadow:0 0 0 3px rgba(22,119,255,0.1);
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+        }
+        .card-a {
+            border: 1px solid #ffe0e0;
+        }
+        .card-b {
+            border: 1px solid #ffe9c9;
+        }
+        .card-c {
+            border: 1px solid #d7f0dd;
+        }
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap:10px;
+            margin-bottom:16px;
+        }
+        .badge {
+            width: 28px;
+            height:28px;
+            border-radius: 6px;
+            color:#fff;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-weight:bold;
+        }
+        .badge-a {
+            background-color:#f5222d;
+        }
+        .badge-b {
+            background-color:#fa8c16;
+        }
+        .badge-c {
+            background-color:#389e0d;
+        }
+        .title-a {
+            color:#c0392b;
+            font-size:20px;
+            font-weight:bold;
+        }
+        .title-b {
+            color:#d46b08;
+            font-size:20px;
+            font-weight:bold;
+        }
+        .title-c {
+            color:#2e7d32;
+            font-size:20px;
+            font-weight:bold;
+        }
+        .tip-text {
+            margin-left:auto;
+            font-size:13px;
+            color:#888;
+        }
+        table {
+            width:100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border:1px solid #eee;
+            padding:10px 10px;
+            font-size:14px;
+        }
+        th {
+            background-color:#f7f8fa;
+        }
+        footer {
+            margin-top:40px;
+            padding-top:24px;
+            border-top:1px solid #e5e7eb;
+            text-align:center;
+            font-size:14px;
+            color:#646a73;
+            line-height:1.8;
+        }
+        footer a {
+            color:#1677ff;
+            text-decoration:none;
+        }
+        footer a:hover {
+            text-decoration:underline;
+        }
+        .copyright {
+            margin-top:8px;
+            font-size:13px;
+            color:#8a8f99;
+        }
+        @media(max-width:768px){
+            table, thead, tbody, th, td, tr {
+                display:block;
+            }
+            thead tr {
+                position:absolute;
+                top:-9999px;
+                left:-9999px;
+            }
+            tr {
+                margin-bottom:12px;
+                border:1px solid #eee;
+                border-radius:8px;
+            }
+            td {
+                border:none;
+                border-bottom:1px solid #eee;
+                position:relative;
+                padding-left:110px;
+            }
+            td:before {
+                position:absolute;
+                left:12px;
+                font-weight:bold;
+            }
+            td:nth-of-type(1):before { content:"词汇"; }
+            td:nth-of-type(2):before { content:"英语原义"; }
+            td:nth-of-type(3):before { content:"编程含义"; }
+            td:nth-of-type(4):before { content:"适用语言"; }
+            .card-header {
+                flex-wrap:wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>编程英文词汇词义对照表</h1>
+        <div class="desc">同一个英文单词，日常英语含义 vs 编程领域含义</div>
+    </header>
+
+    <!-- 搜索框 -->
+    <div class="search-wrap">
+        <input id="searchInput" placeholder="🔍 输入单词搜索，例如 if、int、for、switch" type="text">
+    </div>
+
+    <!-- A 完全不同 -->
+    <div class="card card-a">
+        <div class="card-header">
+            <div class="badge badge-a">A</div>
+            <div class="title-a">完全不同</div>
+            <div class="tip-text">英语原义 ≠ 编程含义</div>
+        </div>
+        <table class="vocab-table">
+            <thead>
+                <tr><th>词汇</th><th>英语原义</th><th>编程含义</th><th>适用语言</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Bug</td><td>虫子</td><td>程序缺陷/漏洞</td><td>通用</td></tr>
+                <tr><td>Cookie</td><td>小饼干</td><td>浏览器站点存储数据</td><td>Web前端</td></tr>
+                <tr><td>Driver</td><td>司机</td><td>驱动程序</td><td>C/C++，系统开发</td></tr>
+                <tr><td>Port</td><td>港口、口岸</td><td>端口（网络/接口编号）</td><td>通用网络编程</td></tr>
+                <tr><td>Socket</td><td>插座</td><td>套接字（网络通信端点）</td><td>C/C++，Python，Java</td></tr>
+                <tr><td>Shell</td><td>贝壳、外壳</td><td>命令行解释器</td><td>Linux，C开发</td></tr>
+                <tr><td>Boot</td><td>靴子</td><td>开机启动，自举</td><td>底层C/C++</td></tr>
+                <tr><td>Handle</td><td>把手；处理</td><td>句柄（资源引用标识）</td><td>C/C++ Windows开发</td></tr>
+                <tr><td>Cache</td><td>藏匿处、私藏</td><td>高速缓存</td><td>通用，底层开发</td></tr>
+                <tr><td>Toast</td><td>烤面包片</td><td>轻量弹窗提示条</td><td>移动端前端</td></tr>
+                <tr><td>Cast</td><td>投掷；选派演员</td><td>类型转换</td><td>C，Java，C++</td></tr>
+                <tr><td>Java</td><td>爪哇岛/咖啡</td><td>编程语言</td><td>Java</td></tr>
+                <tr><td>Python</td><td>蟒蛇</td><td>编程语言</td><td>Python</td></tr>
+                <tr><td>Ruby</td><td>红宝石</td><td>编程语言</td><td>Ruby</td></tr>
+                <tr><td>Docker</td><td>码头工人</td><td>容器技术</td><td>运维通用</td></tr>
+                <tr><td>Mock</td><td>嘲笑</td><td>测试模拟对象</td><td>单元测试</td></tr>
+                <tr><td>Stub</td><td>烟蒂、残端</td><td>测试占位桩</td><td>单元测试</td></tr>
+                <tr><td>Daemon</td><td>守护精灵</td><td>守护进程（后台程序）</td><td>Linux C/C++</td></tr>
+                <tr><td>Fork</td><td>叉子</td><td>复制进程 / Git仓库分支</td><td>Linux C/C++，Git</td></tr>
+                <tr><td>Salt</td><td>盐</td><td>密码加盐（随机字符串）</td><td>通用密码学</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- B 部分相似 -->
+    <div class="card card-b">
+        <div class="card-header">
+            <div class="badge badge-b">B</div>
+            <div class="title-b">部分相似</div>
+            <div class="tip-text">语义有联系，但含义偏移</div>
+        </div>
+        <table class="vocab-table">
+            <thead>
+                <tr><th>词汇</th><th>英语原义</th><th>编程含义</th><th>适用语言</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>if</td><td>如果</td><td>条件判断关键字</td><td>C，C++，Java，JS</td></tr>
+                <tr><td>else</td><td>其他，否则</td><td>if的否定分支关键字</td><td>C，C++，Java，JS</td></tr>
+                <tr><td>for</td><td>为了，对于</td><td>循环关键字</td><td>C，C++，Java，JS</td></tr>
+                <tr><td>while</td><td>当…的时候</td><td>while循环关键字</td><td>C，C++，Java，JS</td></tr>
+                <tr><td>switch</td><td>开关，转换</td><td>多分支选择关键字</td><td>C，C++，Java</td></tr>
+                <tr><td>case</td><td>案例，情况</td><td>switch分支标签</td><td>C，C++，Java</td></tr>
+                <tr><td>int</td><td>缩写integer：整数</td><td>整型数据类型</td><td>C，C++，Java</td></tr>
+                <tr><td>bool</td><td>boolean缩写：布尔</td><td>布尔类型（真/假）</td><td>C++，Java</td></tr>
+                <tr><td>char</td><td>字符</td><td>字符类型</td><td>C，C++，Java</td></tr>
+                <tr><td>double</td><td>双倍的</td><td>双精度浮点数类型</td><td>C，C++，Java</td></tr>
+                <tr><td>return</td><td>返回，归还</td><td>函数返回关键字</td><td>C，C++，Java</td></tr>
+                <tr><td>break</td><td>打破，中断</td><td>跳出循环/switch</td><td>C，C++，Java</td></tr>
+                <tr><td>continue</td><td>继续</td><td>跳过本次循环</td><td>C，C++，Java</td></tr>
+                <tr><td>static</td><td>静态的</td><td>静态修饰符</td><td>C，C++，Java</td></tr>
+                <tr><td>const</td><td>恒定不变的</td><td>常量修饰符</td><td>C，C++</td></tr>
+                <tr><td>class</td><td>班级、等级</td><td>类（面向对象）</td><td>C++，Java</td></tr>
+                <tr><td>new</td><td>新的</td><td>动态内存分配</td><td>C++，Java</td></tr>
+                <tr><td>delete</td><td>删除</td><td>释放堆内存</td><td>C++</td></tr>
+                <tr><td>virtual</td><td>虚拟的</td><td>虚函数修饰符</td><td>C++</td></tr>
+                <tr><td>public</td><td>公共的</td><td>公有访问权限</td><td>C++，Java</td></tr>
+                <tr><td>private</td><td>私有的</td><td>私有访问权限</td><td>C++，Java</td></tr>
+                <tr><td>namespace</td><td>命名空间</td><td>命名空间，防止命名冲突</td><td>C++</td></tr>
+                <tr><td>template</td><td>模板</td><td>模板，泛型编程</td><td>C++</td></tr>
+                <tr><td>Stack</td><td>一叠、堆放</td><td>栈，后进先出结构</td><td>C++(STL)，C，Java</td></tr>
+                <tr><td>Heap</td><td>一堆</td><td>堆，动态内存区域</td><td>C/C++，通用</td></tr>
+                <tr><td>Array</td><td>排列、阵列</td><td>数组</td><td>C，C++，Python</td></tr>
+                <tr><td>Variable</td><td>可变的</td><td>变量</td><td>全部语言</td></tr>
+                <tr><td>Pointer</td><td>指示物</td><td>指针</td><td>C，C++</td></tr>
+                <tr><td>Flag</td><td>旗帜</td><td>标志位</td><td>C/C++，通用</td></tr>
+                <tr><td>Object</td><td>物体、目标</td><td>对象</td><td>C++，Java，JS</td></tr>
+                <tr><td>Tree</td><td>树</td><td>树形数据结构</td><td>通用算法</td></tr>
+                <tr><td>Queue</td><td>排队</td><td>队列</td><td>C++(STL)，通用</td></tr>
+                <tr><td>Loop</td><td>环、圈</td><td>循环</td><td>全部语言</td></tr>
+                <tr><td>Exception</td><td>例外</td><td>异常</td><td>C++，Java</td></tr>
+                <tr><td>Field</td><td>田地</td><td>字段</td><td>结构体，数据库</td></tr>
+                <tr><td>Thread</td><td>线</td><td>线程</td><td>C++11，Java，Python</td></tr>
+                <tr><td>Stream</td><td>溪流</td><td>数据流</td><td>C++(iostream)，Java</td></tr>
+                <tr><td>Client</td><td>客户</td><td>客户端</td><td>网络编程</td></tr>
+                <tr><td>Server</td><td>服务员</td><td>服务器</td><td>网络编程</td></tr>
+                <tr><td>Bit</td><td>一点、少量</td><td>比特，最小二进制单位</td><td>C/C++底层</td></tr>
+                <tr><td>Address</td><td>地址</td><td>内存地址</td><td>C，C++</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- C 基本一致 -->
+    <div class="card card-c">
+        <div class="card-header">
+            <div class="badge badge-c">C</div>
+            <div class="title-c">基本一致</div>
+            <div class="tip-text">编程含义 ≈ 英语原义</div>
+        </div>
+        <table class="vocab-table">
+            <thead>
+                <tr><th>词汇</th><th>英语原义</th><th>编程含义</th><th>适用语言</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Syntax</td><td>语法</td><td>语法</td><td>全部语言</td></tr>
+                <tr><td>Function</td><td>功能、函数</td><td>函数</td><td>全部语言</td></tr>
+                <tr><td>Method</td><td>方法</td><td>方法（类内函数）</td><td>C++，Java，JS</td></tr>
+                <tr><td>Algorithm</td><td>算法</td><td>算法</td><td>通用</td></tr>
+                <tr><td>Protocol</td><td>协议</td><td>通信协议</td><td>网络编程</td></tr>
+                <tr><td>Transaction</td><td>交易、事务</td><td>数据库事务</td><td>数据库</td></tr>
+                <tr><td>Query</td><td>询问、查询</td><td>查询语句</td><td>SQL</td></tr>
+                <tr><td>Index</td><td>索引</td><td>索引</td><td>数据库，STL</td></tr>
+                <tr><td>Debug</td><td>调试</td><td>调试程序</td><td>通用</td></tr>
+                <tr><td>Compile</td><td>编译</td><td>编译源代码</td><td>C/C++</td></tr>
+                <tr><td>Execute</td><td>执行</td><td>执行代码</td><td>通用</td></tr>
+                <tr><td>Module</td><td>模块</td><td>代码模块</td><td>C++20，Python</td></tr>
+                <tr><td>Framework</td><td>框架</td><td>开发框架</td><td>通用</td></tr>
+                <tr><td>Library</td><td>藏书库</td><td>代码库</td><td>通用</td></tr>
+                <tr><td>Package</td><td>包裹</td><td>软件包</td><td>Python，Java</td></tr>
+                <tr><td>Model</td><td>模型</td><td>数据模型</td><td>通用</td></tr>
+                <tr><td>Memory</td><td>记忆、存储</td><td>内存</td><td>C/C++</td></tr>
+                <tr><td>Database</td><td>数据库</td><td>数据库</td><td>通用</td></tr>
+                <tr><td>Version</td><td>版本</td><td>版本</td><td>通用</td></tr>
+                <tr><td>Network</td><td>网络</td><td>计算机网络</td><td>通用</td></tr>
+                <tr><td>Filter</td><td>过滤</td><td>过滤器</td><td>STL，通用</td></tr>
+                <tr><td>Sort</td><td>排序</td><td>排序算法</td><td>STL，通用</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+<footer>
+    <p>提示：A类大多是隐喻/历史典故；B类借用形象引申出新含义；C类词汇直接沿用英文本义。</p>
+    <p>项目仓库：<a href="https://github.com/dxiangwiki/programming-english-vocab" target="_blank">github.com/dxiangwiki/programming-english-vocab</a></p>
+    <p class="copyright">© 2026 dxiangwiki | 本项目仅供学习参考使用</p>
+</footer>
+
+</div>
+
+<script>
+    const searchInput = document.getElementById('searchInput');
+    const tables = document.querySelectorAll('.vocab-table');
+    searchInput.addEventListener('input', function(){
+        const keyword = this.value.trim().toLowerCase();
+        tables.forEach(table => {
+            const trs = table.querySelectorAll('tbody tr');
+            trs.forEach(tr => {
+                const text = tr.innerText.toLowerCase();
+                tr.style.display = text.includes(keyword) ? '' : 'none';
+            });
+        });
+    })
+</script>
+</body>
+</html>
